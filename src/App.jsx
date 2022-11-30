@@ -7,9 +7,9 @@ import Login from "./pages/Login";
 import ProductId from "./pages/ProductId";
 import Purchase from "./pages/Purchase";
 import { useSelector } from "react-redux";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 function App() {
-
   const isLoading = useSelector((state) => state.isLoading);
 
   return (
@@ -20,8 +20,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productId/:id" element={<ProductId />} />
-        <Route path="/purchase" element={<Purchase />} />
+       
         <Route path="/login" element={<Login />} />
+        <Route element={<ProtectedRoutes />}>
+           <Route path="/purchase" element={<Purchase />} />
+        </Route>
       </Routes>
     </HashRouter>
   );
