@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import store from './store';
 import { Provider } from 'react-redux';
-import "bootswatch/dist/cyborg/bootstrap.min.css"; //preferentemente en minuscula para que no ocasione problemas en el deployment
+import "bootswatch/dist/united/bootstrap.min.css"; //preferentemente en minuscula para que no ocasione problemas en el deployment
 
 
 

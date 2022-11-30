@@ -1,11 +1,15 @@
 * {
-  margin: 0;
+  margin: 0.3rem;
   padding: 0;
   box-sizing: border-box;
 }
 body{
   display: grid;
   gap: 4rem;
+  
+}
+li{
+  list-style: none;
 }
 .navegacion{
   padding: 2.5rem;
@@ -60,4 +64,8 @@ img{
 
 .related{
   margin: 4rem
+}
+.logg{
+  display: grid;
+  place-content: center;
 }
