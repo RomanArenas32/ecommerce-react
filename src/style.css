@@ -12,7 +12,7 @@ li{
   list-style: none;
 }
 .navegacion{
-  padding: 2.5rem;
+  padding: 2rem;
   border-bottom: 1px solid white;
 }
 .loader {
@@ -24,7 +24,7 @@ li{
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
   position: absolute;
-  margin: 10rem auto;
+  margin: 18rem;
 }
 .loader::after {
   content: "";
@@ -49,9 +49,8 @@ li{
   }
 }
 .contaiderId{
-  position: relative;
-  margin: 7rem;
-  top: 0;
+  display: grid;
+  place-content: center;
   text-align: center;
   gap: 1.2rem;
 }
@@ -68,4 +67,9 @@ img{
 .logg{
   display: grid;
   place-content: center;
+}
+.container{
+  display: grid;
+  place-content: center;
+  gap: 2rem;
 }

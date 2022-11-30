@@ -12,14 +12,14 @@ const Home = () => {
   const [categoriesList, setCategoriesList] = useState([]);
   const [inputSearch, setInputSearch] = useState("");
 
-
+  console.log(products)
   useEffect(() => {
     dispatch(getNewsThunk());
     axios.get(`https://e-commerce-api.academlo.tech/api/v1/products/categories/`)
     .then((res) => setCategoriesList(res.data.data.categories));
   }, []);
   return (
-    <div>
+    <div className="container">
       <h2>E-commerce</h2>
       {categoriesList.map((category) => (
         <Button onClick={() => dispatch(filterNewsThunk(category.id))}>
@@ -42,8 +42,12 @@ const Home = () => {
         </Button>
       </InputGroup>
       {products.map((el) => (
-        <li>
-          <Link to={`/productId/${el.id}`} key={el.title}>{el.title}</Link>
+        <li key={el.title}>
+        <div>
+           <Link to={`/productId/${el.id}`} ><h6>{el.title}</h6></Link>
+            <h3>USD {el.price}</h3>
+        </div>
+          <img src={el.productImgs[0]} alt="" />
         </li>
       ))}
     </div>
