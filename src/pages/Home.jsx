@@ -41,8 +41,9 @@ const Home = () => {
           Search
         </Button>
       </InputGroup>
+      <div className="related">
       {products.map((el) => (
-        <li key={el.title}>
+        <li key={el.title} className="related-card">
         <div>
            <Link to={`/productId/${el.id}`} ><h6>{el.title}</h6></Link>
             <h3>USD {el.price}</h3>
@@ -50,6 +51,9 @@ const Home = () => {
           <img src={el.productImgs[0]} alt="" />
         </li>
       ))}
+      
+      </div>
+      
     </div>
   );
 };

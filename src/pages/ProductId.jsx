@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getNewsThunk } from "../store/slices/products.slice";
 import Button from 'react-bootstrap/Button';
+import { createCartThunk } from "../store/slices/cart.slice";
+
 
 const ProductId = () => {
   const { id } = useParams();
@@ -21,14 +23,14 @@ const ProductId = () => {
   const relatedProducts = productList.filter(
     (el) => el.category.name == news.category.name
   );
-  console.log(productList);
+
 
     const addCart = ()=>{
        const prod = {
         id: news.id,
         quantity: quantity
        }
-       console.log(prod)
+       dispatch(createCartThunk(prod))
     };
 
   return (
@@ -45,10 +47,14 @@ const ProductId = () => {
           <img src={news?.productImgs[2]} />
         </div>
       </div>
-
+      <h3>Related products:</h3>
       <section className="related">
         {relatedProducts.map((related) => (
-          <h6>{related.title}</h6>
+          <div key={related.title} className="related-card">
+            <h6>{related.title}</h6>
+            <img src={related?.productImgs[1]} alt="" />
+          </div>
+        
         ))}
       </section>
     </div>

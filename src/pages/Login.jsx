@@ -15,7 +15,7 @@ const Login = () => {
       .post("https://e-commerce-api.academlo.tech/api/v1/users/login", data)
       .then((res) => {
         navigate("/");
-        console.log(res);
+
         localStorage.setItem("token", res.data.data.token); // res.data.data.token
       })
       .catch((error) => {
