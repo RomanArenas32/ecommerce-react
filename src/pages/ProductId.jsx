@@ -12,7 +12,6 @@ const ProductId = () => {
   const [quantity, setQuantity] = useState("");
 
 
-
   useEffect(() => {
     dispatch(getNewsThunk());
   }, []);
@@ -38,10 +37,14 @@ const ProductId = () => {
       <div>
         <h5>{news?.title}</h5>
         <p>{news?.description}</p>
-        <input type="number" value={quantity} onChange={e => setQuantity(e.target.value)}/>
+        <div className="quantity">
+        
+         <input type="number" value={quantity} onChange={e => setQuantity(e.target.value)}/>
         <Button variant="primary" size="lg" onClick={addCart}>
           add to cart
         </Button>
+        </div>
+       
         <div>
           <img src={news?.productImgs[1]} />
           <img src={news?.productImgs[2]} />

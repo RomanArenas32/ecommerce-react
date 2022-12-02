@@ -21,11 +21,14 @@ const Home = () => {
   return (
     <div className="container">
       <h2>E-commerce</h2>
+      <div className="category">
       {categoriesList.map((category) => (
         <Button onClick={() => dispatch(filterNewsThunk(category.id))}>
           {category.name}
         </Button>
       ))}
+      </div>
+      
       <InputGroup className="mb-3">
         <Form.Control
           placeholder="Recipient's username"

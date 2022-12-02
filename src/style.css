@@ -74,6 +74,7 @@ img{
   background-color: rgb(248, 239, 227);
   text-align: center;
   border-radius: 2rem;
+  justify-content: center;
 }
 .related-card>img{
   width: 160px;
@@ -87,4 +88,22 @@ img{
   display: grid;
   place-content: center;
   gap: 2rem;
+}
+
+.category{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.3rem;
+}
+.quantity{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  gap: 1.4rem;
+  justify-content: center;
+}
+.quantity>input{
+  text-align: center;
 }
